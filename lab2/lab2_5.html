@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lanf="ru">
 <head>
 <meta charset="utf-8">
 <title>Форма</title>
@@ -20,13 +20,11 @@ td, th {
 <form action="#">
   <h1>Форма регистрации пользователя</h1>
   <p><i>Пожалуйста, заполните форму. Обязательные поля помечены </i><em>*</em></p>
-  <table>
+<table>
 		<tbody>
 		<tr>
 			<td><label for="email">Email<em>*</em></label></td>
-			<td><input id="email" placeholder="Введите e-mail" pattern="([a-zA-Z])([a-zA-Z]*)([a-zA-Z0-9_-]*)"
-      title="Должен начинаться с буквы, можно использовать - _ цифры и буквы латинского алфавита 
-             и содержать от 6 до 20 символов(все буквы латинского алфавита)" minlength=6 maxlength=20 required></td>
+			<td><input id="email" type="email" placeholder="Введите e-mail"  maxlength=20 required></td>
 		</tr>
 		<tr>
 			<td><label for="password">Пароль<em>*</em></label></td>
@@ -36,7 +34,7 @@ td, th {
              и по крайней мере 8 символов(все буквы латинского алфавита)" required></td>
 		</tr>
 		<tr>
-			<td><label for="Gender">Пол</label></td>
+			<td>Пол</td>
 			<td><input type="radio" id="gender1"
      		name="contact" value="male" checked>
     		<label for="gender1">Мужчина</label>
@@ -46,8 +44,8 @@ td, th {
     		<label for="gender2">Женщина</label></td>
 		</tr>
 		
-		<tr>
-			<td><label for="age">Год рождения</label></td>
+<tr>
+			<td>Год рождения</td>
 			<td><select>
 				<option>1981</option>
 				<option>1982</option>
@@ -72,11 +70,7 @@ td, th {
 				<option>2001</option>
 				<option>2002</option>
 				<option>2003</option>
-				<option>2004</option>
-				<option>2005</option>
-				<option>2006</option>
-				<option>2007</option>
-			    </select></td>
+			    </select>-й</td>
 		</tr>
 		<tr>
 			<td>Я знаю</td>
@@ -88,7 +82,7 @@ td, th {
 		</tr>
 		<tr>
 			<td><label for="comments">О себе</label></td>
-			<td><textarea id="comments"placeholder="Напишите коротко о себе"></textarea></td>
+			<td><textarea id="comments" placeholder="Напишите коротко о себе"></textarea></td>
 		</tr>
 		<tr>
 			<td><input type="submit" value="Отправить информацию"></td>
