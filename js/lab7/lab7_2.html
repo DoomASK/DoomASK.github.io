@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<title></title>
+	<style>
+		::placeholder {
+			color: #66F;
+		}
+	</style>
+</head>
+<body>
+	<div id="texfield">
+		<label for="sss"></label>
+		<input type="text" data-placeholder="Подсказка"/>
+	</div>
+	<script>
+	'use strict';
+		let tf = document.getElementById("texfield");
+		
+		let ip = tf.getElementsByTagName("input")[0];
+		let lb = tf.getElementsByTagName("label")[0];
+		lb.style.display = "none";
+		
+		ip.setAttribute("placeholder", ip.dataset.placeholder);
+		lb.innerHTML = ip.dataset.placeholder;
+		
+		ip.addEventListener("focus", function() {
+			lb.style.display = "block";
+			ip.setAttribute("placeholder", "");
+		});
+		
+		ip.addEventListener("blur", function() {
+			lb.style.display = "none";
+			ip.setAttribute("placeholder", ip.dataset.placeholder);
+		});
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <select id="genres">
+        <option value="rock">Рок</option>
+        <option value="blues" selected>Блюз</option>
+    </select>
+      
+    <script>
+        'use strict';
+        let selectedOption = genres.options[genres.selectedIndex];
+        alert(selectedOption.value);
+        alert(selectedOption.text);
+      
+        let newOption = new Option("Классика", "classic");
+        genres.append(newOption);
+      
+        newOption.selected = true;
+    </script>
+</body>
+</html>
