@@ -15,24 +15,26 @@
 
     <script>
         'use strrict';
-        let tf = document.getElementById("texfield");
-		
-		document.addEventListener("keydown", function(event) {
-			
-				if ((event.ctrlKey || event.metaKey) && event.code === "KeyE") {
-					event.preventDefault();
-					let di = document.querySelector('div');
-					di.outerHTML = '<textarea>' + di.innerHTML + '</textarea>'
-				} else if ((event.ctrlKey || event.metaKey) && event.code === "KeyS") {
-					event.preventDefault();
-					let di = document.querySelector('textarea');
-					di.outerHTML = '<div>' + di.value + '</div>'
-				} else if (event.code === "Escape") {
-					event.preventDefault();
-					let di = document.querySelector('textarea');
-					di.outerHTML = '<div>' + di.innerHTML + '</div>'
-				}
-		});
+		area.hidden = true;
+        document.onkeydown = function(e) {
+            if (e.ctrlKey && e.keyCode == '69') {
+                view.hidden = true;
+                area.hidden = false;
+                area.focus()
+                area.innerHTML = view.innerHTML;
+                return false;
+            }
+
+            if (e.ctrlKey && e.keyCode == '83') {
+                view.hidden = false;
+                area.hidden = true;
+                view.innerHTML = area.value;
+                return false;
+            } else if (e.keyCode == '27') {
+                view.hidden = false;
+                area.hidden = true;
+            }
+        };
     </script>
 </body>
 
