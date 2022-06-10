@@ -96,7 +96,7 @@ arr_reserve=arr.slice();
 
     arr_reserve.sort((a, b) => b - a);
 
-ruturn arr_reserve;
+return arr_reserve;
 }
 /**
  * возвращает сумму всех аргументов
