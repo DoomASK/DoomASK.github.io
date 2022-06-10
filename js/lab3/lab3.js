@@ -21,7 +21,9 @@ function getDecimal(num) {
  * @returns string
  */
 function ucFirst(str) {
-    return (str[0].toUpperCase() + str.slice(1));
+    if (!str) return str;
+
+    return str[0].toUpperCase() + str.slice(1);
 }
 /**
  * проверяет на наличие ххх и viagra
