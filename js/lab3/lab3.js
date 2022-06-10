@@ -81,7 +81,7 @@ function fib(p){
            for (let p = 0; p < N; ++p) {
                a[p] = fib(p);
            }
-   else return NaN;
+   else return a[];
 
    return a;
 }
