@@ -7,22 +7,19 @@
     <title>Задание 3</title>
 </head>
 <body>
+    <script src="lab3.js"></script>
     <script>
         'use strict'
         let arr = [];
         let i = 0;
         let a;
-    
         while (!Number.isNaN(a)) {
             a = +prompt("Введите эл-т массива. Любой символ -- для завершения");
             if (!Number.isNaN(a))
                 arr[i] = +a;
             i++;
         }
-        let arrReverseSorted = arr.slice();
-        arrReverseSorted.sort((a, b) => b-a);
-        console.log(arr);
-        console.log(arrReverseSorted);
+        console.log(arrReverseSorted(arr));
     </script>
 </body>
 </html>
