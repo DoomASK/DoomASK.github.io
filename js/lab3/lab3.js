@@ -61,39 +61,37 @@ function camelize(str) {
     return str;
 }
 
-/**
- * возвращает массив заполненый числами фиббоначи до n-1'го номера
- * @param {number} N номер числа фиббоначи
- * @returns string
- */
- function fibs(N) {
-     /**
- * возвращает число последовательности фиббоначи
- * @param {number} p номер числа фиббоначи
- * @returns number
- */
- function fib(p){
-        let a = 0n;
-        let b = 1n;
-        //Исключения
-        if (p==0) return a;
-        if (p==1) return b;
-        for (let i = 2; i <= p; i++) {
-          let c = a + b;
-          a = b;
-          b = c;
-        }
-        return b;
-      }
+function fibs(N) {
     let a = [];
+    let str = '';
     if (!Number.isNaN(N))
-            for (let p = 0; p < N; ++p) {
-                a[p] = fib(p);
+        if (N == 0) str = 0;
+        else
+            for (let j = 0; j < N; ++j) {
+                a[j] = fib(j);
+                str += a[j] + ' ';
             }
-    else return NaN;
- 
-    return a;
- }
+    else str = {};
+
+    return str;
+
+    function fib(j) {
+        let a = 1n;
+        let b = 1n;
+        let c;
+        if (j == 0) return 0;
+        if (j == 1) return 1;
+        if (j == 2) return 1;
+        for (let i = 3; i <= j; i++) {
+            c = a + b;
+            a = b;
+            b = c;
+        }
+        if (b == 1n)
+            b = 0;
+        return b;
+    }
+}
 /**
  * возвращает reverse массив
  * @param {array} arr неупорядочный массив чисел
